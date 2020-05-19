@@ -1,0 +1,158 @@
+/* Import for space-like Jura font - 300 and 700 widths for text and headings respectively */
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;700&display=swap');
+
+:root {
+  --space-font: 'Jura', sans-serif;
+  --input-text-color: white;
+  --trans-black-bg: rgba(0, 0, 0, 0.6);
+  --border-radius: 5px;
+}
+
+* {
+  font-family: var(--space-font);
+  box-sizing: border-box;
+}
+
+body {
+  align-items: center;
+  background-repeat: no-repeat;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 1)),
+    url(img/metal.jpg);
+  background-color: black;
+  background-size: cover;
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+button {
+  background-color: red;
+  border: 0;
+  border-radius: var(--border-radius);
+  color: white;
+  cursor: pointer;
+  display: block;
+  font-size: 1.5em;
+  font-weight: 700;
+  height: 2em;
+  margin: 0.5em 0;
+  padding: 0.1em;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+form {
+  width: 90%;
+}
+
+h2 {
+  color: white;
+  display: block;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2em;
+}
+
+input {
+  background-color: var(--trans-black-bg);
+  border-color: var(--input-text-color);
+  border-radius: var(--border-radius);
+  border-width: 3px;
+  color: var(--input-text-color);
+  display: block;
+  font-size: 1em;
+  height: 3em;
+  margin: 0.5em 0;
+  padding: 10px;
+  width: 100%;
+}
+
+input.success {
+  border-color: greenyellow;
+}
+
+input.failure {
+  border-color: red;
+}
+
+input::placeholder {
+  color: var(--input-text-color);
+}
+
+label {
+  color: var(--input-text-color);
+  text-transform: uppercase;
+}
+
+main {
+  align-items: center;
+  animation: spaceScroll 200s linear infinite;
+  animation-fill-mode: forwards;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(img/stars.jpg);
+  background-size: auto 100%;
+  background-color: black;
+  background-position: left center;
+  border: 15px darkgrey solid;
+  border-radius: 100px;
+  box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 90vmin;
+  margin: 1em 0;
+  min-height: 700px;
+  min-width: 550px;
+  padding: 0;
+  width: 67.5vmin;
+}
+
+small {
+  color: red;
+  font-weight: 700;
+  font-size: 1em;
+  margin: 1em 0;
+  visibility: hidden;
+}
+
+/* CLASSES */
+
+.form-control {
+  margin: 1em 0;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media only screen and (max-width: 850px) {
+  body {
+    animation: spaceScroll 200s linear infinite;
+    animation-fill-mode: forwards;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url(img/stars.jpg);
+    font-size: 18px;
+  }
+
+  main {
+    background: none;
+    border: none;
+    box-shadow: none;
+    height: 100%;
+    margin: 1em 0;
+    min-height: 380px;
+    min-width: 300px;
+    width: 100%;
+  }
+}
+
+/* ANIMATION */
+
+/* Scrolls the star background slowly to the left */
+@keyframes spaceScroll {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
